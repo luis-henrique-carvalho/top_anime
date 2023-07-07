@@ -9,7 +9,6 @@ import SearchNav from "./components/SearchNav";
 
 const NavBar = () => {
   const [search, setSearch] = useState("");
-
   const pathName = usePathname();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -18,21 +17,15 @@ const NavBar = () => {
   };
 
   return (
-    <header
-      className={
-        pathName === "/"
-          ? "container  flex mx-auto flex-col h-63 items-center mt-12 font-normal text-base text-anime-white "
-          : "container flex mx-auto flex-col items-center text-anime-white h-24  mt-12 text-base"
-      }
-    >
-      <nav className="flex w-full h-1/2 flex-row justify-between items-center">
+    <header className="mx-auto w-5/6  container">
+      <nav className="flex flex-col w-full mt-6 gap-6 items-center justify-between  md:flex-row">
         <div>
-          <p className=" text-[40px] font-medium text-anime-blue">
+          <p className="text-4xl md:text-3xl font-semibold text-anime-blue">
             <NoUnderlineLink href="/">TopAnimes</NoUnderlineLink>
           </p>
         </div>
-        <div className=" flex items-center gap-8">
-          <ul className=" flex flex-row gap-12 list-none p-4">
+        <div className="flex flex-col md:flex-row w-full lg:w-auto items-center  xl:gap-x-20 gap-x-10">
+          <ul className="flex flex-row w-full justify-between text-anime-white text-base ">
             <li>
               <NoUnderlineLink href="/">Início</NoUnderlineLink>
             </li>
@@ -46,7 +39,6 @@ const NavBar = () => {
               <NoUnderlineLink href="/">Novos Episódios</NoUnderlineLink>
             </li>
           </ul>
-
           <FormNav
             search={search}
             setSearch={setSearch}
@@ -54,7 +46,7 @@ const NavBar = () => {
           />
         </div>
       </nav>
-      {pathName === "/" ? <SearchNav /> : <></>}
+      {pathName === "/" && <SearchNav />}
     </header>
   );
 };

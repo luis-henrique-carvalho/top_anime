@@ -11,7 +11,7 @@ interface Props {
 const FormNav = ({ handleSubmit, search, setSearch }: Props) => {
   return (
     <form
-      className=" flex px-2 w-300 flex-row rounded-full border-2 hover:border hover:border-anime-blue border-transparent bg-anime-dark-200 justify-around transition duration-500 ease-out"
+      className=" flex px-2  w-full md:w-60 lg:w-80 flex-row rounded-sm md:rounded-full border-2 hover:border hover:border-anime-blue border-transparent bg-anime-dark-200 justify-around transition duration-500 ease-out"
       onSubmit={handleSubmit}
     >
       <Input

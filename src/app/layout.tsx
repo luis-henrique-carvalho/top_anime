@@ -20,9 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${rubik.className} bg-anime-dark  `}>
+      <body className={`${rubik.className} bg-anime-dark mx-auto container`}>
         <NavBar />
-        {children}
+        <main className="mx-4 my-8">{children}</main>
       </body>
     </html>
   );
