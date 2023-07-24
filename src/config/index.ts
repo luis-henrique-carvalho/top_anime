@@ -1,9 +1,29 @@
 export async function getTopAnimes(num: string) {
-  const res = await fetch(`https://api.jikan.moe/v4/top/anime?page=${num}`);
+  try {
+    const res = await fetch(`https://api.jikan.moe/v4/top/anime?page=${num}&limit=12`);
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  } catch (err) {
+    console.log(err);
+    return null;
   }
-
-  return res.json();
 }
+
+export const getAnimeById = async (id: string) => {
+  try {
+    const res = await fetch(`https://api.jikan.moe/v4/anime/${id}`);
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  } catch (err) {
+    console.log(err);
+    return null;
+  }
+};
