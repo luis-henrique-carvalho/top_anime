@@ -3,14 +3,15 @@ import Link from "next/link";
 import React from "react";
 
 type Props = {
+  id: string;
   title: string;
   image: string;
   episodes: number;
 };
 
-const AnimeCard = ({ title, image, episodes }: Props) => {
+const AnimeCard = ({ title, image, episodes, id }: Props) => {
   return (
-    <Link href="/" className=" w-36  rounded-lg flex flex-col ">
+    <Link href={`/anime/${id}`} className=" w-36  rounded-lg flex flex-col ">
       <div className="relative w-36 h-48 ">
         <div className="relative w-36 h-48  bg-gradient-to-t from-anime-dark to-transparent z-20 "></div>
         <Image
