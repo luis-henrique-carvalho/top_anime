@@ -17,7 +17,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="mx-auto w-5/6  container">
+    <header className="mx-auto p-4 container">
       <nav className="flex flex-col w-full mt-6 gap-6 items-center justify-between  md:flex-row">
         <div>
           <p className="text-4xl md:text-3xl font-semibold text-anime-blue">
@@ -25,7 +25,7 @@ const NavBar = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row w-full lg:w-auto items-center  xl:gap-x-20 gap-x-10">
-          <ul className="flex flex-row w-full justify-between text-anime-white text-base ">
+          <ul className="flex flex-row mb-2 w-full justify-between text-anime-white text-base ">
             <li>
               <NoUnderlineLink href="/">Início</NoUnderlineLink>
             </li>

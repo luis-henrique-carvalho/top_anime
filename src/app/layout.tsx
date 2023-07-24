@@ -21,8 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${rubik.className} bg-anime-dark mx-auto container`}>
-        <NavBar />
-        <main className="mx-4 my-8">{children}</main>
+     
+          <NavBar />
+          <main className="mx-auto coitainer">{children}</main>
+        
       </body>
     </html>
   );
