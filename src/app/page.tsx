@@ -8,11 +8,11 @@ export default async function Home() {
   console.log(animes);
 
   return (
-    <div className="flex min-h-screen flex-col text-base p-4 items-start">
+    <div className="flex min-h-screen flex-col text-base my-4 items-start">
       <h1 className="text-anime-white text-center mb-4">
         Ultimas atualizações
       </h1>
-      <div className="flex flex-row flex-wrap justify-between gap-y-6">
+      <div className="flex flex-row flex-wrap justify-between gap-6">
         {animesArray &&
           animesArray.map((anime: any) => (
             <AnimeCard

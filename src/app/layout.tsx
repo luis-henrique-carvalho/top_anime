@@ -20,11 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${rubik.className} bg-anime-dark mx-auto container`}>
-     
-          <NavBar />
-          <main className="mx-auto coitainer">{children}</main>
-        
+      <body
+        className={`${rubik.className} bg-anime-dark p-4 mx-auto container max-w-screen-xl`}
+      >
+        <NavBar />
+        <main className="mx-auto">{children}</main>
       </body>
     </html>
   );

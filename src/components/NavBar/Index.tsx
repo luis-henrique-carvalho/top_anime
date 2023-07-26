@@ -17,15 +17,15 @@ const NavBar = () => {
   };
 
   return (
-    <header className="mx-auto p-4 container">
-      <nav className="flex flex-col w-full mt-6 gap-6 items-center justify-between  md:flex-row">
+    <header className="mx-auto container my-6">
+      <nav className="flex flex-col w-full  gap-6 items-center justify-between  md:flex-row">
         <div>
           <p className="text-4xl md:text-3xl font-semibold text-anime-blue">
             <NoUnderlineLink href="/">TopAnimes</NoUnderlineLink>
           </p>
         </div>
-        <div className="flex flex-col md:flex-row w-full lg:w-auto items-center  xl:gap-x-20 gap-x-10">
-          <ul className="flex flex-row mb-2 w-full justify-between text-anime-white text-base ">
+        <div className="flex flex-col md:flex-row w-full lg:w-auto items-center xl:gap-x-20 gap-x-10">
+          <ul className="flex flex-row mb-2 md:mb-0 w-full items-center justify-between text-anime-white text-base ">
             <li>
               <NoUnderlineLink href="/">Início</NoUnderlineLink>
             </li>

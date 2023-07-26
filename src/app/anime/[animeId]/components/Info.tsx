@@ -20,7 +20,7 @@ type Props = {
   studio: Studios[];
 };
 
-const AnimeInfo = ({ duration, gender, studio }: Props) => {
+const Info = ({ duration, gender, studio }: Props) => {
   return (
     <div className="">
       <ul className="flex flex-col list-none text-anime-white gap-3">
@@ -53,4 +53,4 @@ const AnimeInfo = ({ duration, gender, studio }: Props) => {
   );
 };
 
-export default AnimeInfo;
+export default Info;
