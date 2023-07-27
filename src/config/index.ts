@@ -42,3 +42,18 @@ export const getReviewsByAnimeId = async (id: string) => {
     return null;
   }
 };
+
+export const getRecommendationsById = async (id: string) => {
+  try {
+    const res = await fetch(`https://api.jikan.moe/v4/anime/${id}/recommendations`);
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  } catch (err) {
+    console.log(err);
+    return null;
+  }
+};

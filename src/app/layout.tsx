@@ -24,7 +24,7 @@ export default function RootLayout({
         className={`${rubik.className} bg-anime-dark p-4 mx-auto container max-w-screen-xl`}
       >
         <NavBar />
-        <main className="mx-auto">{children}</main>
+        <main className="mx-auto md:px-10 md:mx-auto">{children}</main>
       </body>
     </html>
   );

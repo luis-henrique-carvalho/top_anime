@@ -8,7 +8,7 @@ type Props = {
 const AnimeVideo = ({ url, title }: Props) => {
   return (
     <iframe
-      className="rounded-lg aspect-video"
+      className="rounded-lg aspect-video w-full"
       src={url}
       title={title}
       frameBorder="0" // Change `frameborder` to `frameBorder`

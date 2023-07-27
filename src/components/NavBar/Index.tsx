@@ -17,8 +17,8 @@ const NavBar = () => {
   };
 
   return (
-    <header className="mx-auto container my-6">
-      <nav className="flex flex-col w-full  gap-6 items-center justify-between  md:flex-row">
+    <header className="mx-auto container my-6 md:px-10">
+      <nav className="flex flex-col w-full gap-6 items-center justify-between  md:flex-row">
         <div>
           <p className="text-4xl md:text-3xl font-semibold text-anime-blue">
             <NoUnderlineLink href="/">TopAnimes</NoUnderlineLink>
