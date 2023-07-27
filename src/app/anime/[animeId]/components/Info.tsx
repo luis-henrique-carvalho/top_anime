@@ -24,14 +24,14 @@ const Info = ({ duration, gender, studio }: Props) => {
   return (
     <div className="">
       <ul className="flex flex-col list-none text-anime-white gap-3">
-        <li className=" font-normal text-xs text-anime-gray">
-          <span className="font-medium text-base text-anime-white">
+        <li className=" font-normal text-xs md:text-base text-anime-gray">
+          <span className="font-medium text-base md:text-xl text-anime-white">
             Duração:{" "}
           </span>
           {duration}
         </li>
-        <li className=" font-normal text-xs text-anime-gray">
-          <span className="font-medium text-base text-anime-white">
+        <li className=" font-normal text-xs md:text-base  text-anime-gray">
+          <span className="font-medium text-base md:text-xl text-anime-white">
             Gênero:{" "}
           </span>
           {gender &&
@@ -39,8 +39,8 @@ const Info = ({ duration, gender, studio }: Props) => {
               return index === gender.length - 1 ? item.name : item.name + ", ";
             })}
         </li>
-        <li className=" font-normal text-xs text-anime-gray">
-          <span className="font-medium text-base text-anime-white">
+        <li className=" font-normal text-xs md:text-base text-anime-gray">
+          <span className="font-medium text-base md:text-xl text-anime-white">
             Estudio:{" "}
           </span>
           {studio &&

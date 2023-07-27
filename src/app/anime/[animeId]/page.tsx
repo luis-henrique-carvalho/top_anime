@@ -6,13 +6,16 @@ import Reviews from "./components/Reviews";
 import Synopsis from "./components/Synopsis";
 import Info from "./components/Info";
 import MorePopular from "./components/MorePopular";
+import Image from "next/image";
 
 const AnimeDetails = async ({ params }: { params: { animeId: string } }) => {
   const res = await getAnimeById(params.animeId);
   const anime = res.data;
+  const image = anime.images.jpg.large_image_url;
+  console.log(anime);
 
   return (
-    <div className="flex flex-col gap-y-5">
+    <div className="flex flex-col gap-y-10 mt-16">
       {anime && (
         <>
           <div className="lg:flex lg:flex-row lg:justify-between">
@@ -25,14 +28,32 @@ const AnimeDetails = async ({ params }: { params: { animeId: string } }) => {
 
             <MorePopular animeId={params.animeId} />
           </div>
+          <div className="flex flex-row  justify-between w-full gap-6">
+            <div className=" hidden lg:flex h-[380px] ">
+              <div className="absolute xl:h-[380px] xl:w-[270px] h-[370px] w-[270px]">
+                <Image
+                  src={image}
+                  fill
+                  priority
+                  style={{
+                    objectFit: "cover",
+                  }}
+                  alt="Picture of the author"
+                  className="rounded-xl"
+                  sizes="(max-width: 640px) 100vw, 640px"
+                />
+              </div>
+            </div>
 
-          <Synopsis synopsis={anime.synopsis} />
-          <Info
-            gender={anime.genres}
-            duration={anime.duration}
-            studio={anime.studios}
-          />
-          <Synopsis synopsis={anime.synopsis} />
+            <div className="flex flex-col text-justify gap-12 w-full lg:w-8/12 xl:w-9/12">
+              <Info
+                gender={anime.genres}
+                duration={anime.duration}
+                studio={anime.studios}
+              />
+              <Synopsis synopsis={anime.synopsis} />
+            </div>
+          </div>
           <Reviews animeId={params.animeId} />
         </>
       )}
