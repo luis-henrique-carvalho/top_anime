@@ -1,4 +1,4 @@
-import AnimeCard from "@/components/AnimeCard/Index";
+import AnimeCard from "@/components/AnimeCard";
 import { getTopAnimes } from "@/config";
 
 export default async function Home() {

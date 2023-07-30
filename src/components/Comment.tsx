@@ -17,6 +17,7 @@ const Comment = ({ userName, comment, image }: Props) => {
           style={{
             objectFit: "cover",
           }}
+          priority
           alt="Picture of the author"
           className="rounded-full self-center"
           sizes="(max-width: 640px) 100vw, 640px" // Adicione essa linha com o tamanho esperado da imagem
@@ -24,7 +25,7 @@ const Comment = ({ userName, comment, image }: Props) => {
       </div>
       <div className="flex flex-col w-full">
         <h4 className="text-xs md:text-lg font-medium mb-1">{userName}</h4>
-        <p className="text-anime-gray text-justify md:text-base text-xs font-normal line-clamp-3">
+        <p lang="pt-BR" className="text-anime-gray text-justify md:text-base text-xs font-normal line-clamp-3">
           {comment}
         </p>
       </div>

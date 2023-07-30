@@ -11,6 +11,7 @@ const rubik = Rubik({
 export const metadata: Metadata = {
   title: "TopAnimes",
   description: "Veja seus animes favoritos",
+  
 };
 
 export default function RootLayout({
@@ -19,7 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
+      
       <body
         className={`${rubik.className} bg-anime-dark p-4 mx-auto container max-w-screen-xl`}
       >

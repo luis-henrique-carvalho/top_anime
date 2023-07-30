@@ -9,6 +9,8 @@ type Props = {
 const Reviews = async ({ animeId }: Props) => {
   const res = await getReviewsByAnimeId(animeId);
   const reviewsArray = Array.from(res.data);
+  console.log(reviewsArray)
+
 
   return (
     <div className="flex flex-col gap-3">

@@ -1,18 +1,23 @@
 import AnimeVideo from "@/components/AnimeVideo";
-import { getAnimeById } from "@/config";
+import {
+  getAnimeById,
+} from "@/config";
 import React from "react";
 
 import Reviews from "./components/Reviews";
 import Synopsis from "./components/Synopsis";
 import Info from "./components/Info";
-import MorePopular from "./components/MorePopular";
+
 import Image from "next/image";
+import Recommendations from "./components/Recommendations";
+import Episodes from "./components/Episodes";
 
 const AnimeDetails = async ({ params }: { params: { animeId: string } }) => {
   const res = await getAnimeById(params.animeId);
   const anime = res.data;
+  // console.log(anime);
+
   const image = anime.images.jpg.large_image_url;
-  console.log(anime);
 
   return (
     <div className="flex flex-col gap-y-10 mt-16">
@@ -26,7 +31,10 @@ const AnimeDetails = async ({ params }: { params: { animeId: string } }) => {
               <AnimeVideo title={anime.title} url={anime.trailer.embed_url} />
             </div>
 
-            <MorePopular animeId={params.animeId} />
+            <Recommendations
+          
+              animeId={params.animeId}
+            />
           </div>
           <div className="flex flex-row  justify-between w-full gap-6">
             <div className=" hidden lg:flex h-[380px] ">
@@ -55,6 +63,11 @@ const AnimeDetails = async ({ params }: { params: { animeId: string } }) => {
             </div>
           </div>
           <Reviews animeId={params.animeId} />
+
+          <Episodes
+            animeId={params.animeId}
+            image={anime.images.jpg.large_image_url}
+          />
         </>
       )}
     </div>
