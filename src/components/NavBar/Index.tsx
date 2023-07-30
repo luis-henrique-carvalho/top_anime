@@ -2,17 +2,20 @@
 "use client";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 // Components
 import NoUnderlineLink from "./components/NoUnderlineLink";
 import FormNav from "./components/FormNav";
-import SearchNav from "./components/SearchNav";
+import SearchNav from "../SearchNav";
 
 const NavBar = () => {
   const [search, setSearch] = useState("");
   const pathName = usePathname();
+  const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    router.push(`../search/${search}`);
     return;
   };
 

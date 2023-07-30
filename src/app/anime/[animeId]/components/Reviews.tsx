@@ -13,7 +13,7 @@ const Reviews = async ({ animeId }: Props) => {
   if (res) {
     reviewsArray = Array.from(res.data);
   }
-  console.log(reviewsArray);
+  // console.log(reviewsArray);
 
   return (
     <div className="flex flex-col gap-3">

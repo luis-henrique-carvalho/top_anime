@@ -13,7 +13,7 @@ const Episodes = async ({ animeId, image }: Props) => {
   const resEpisodes = await getEpisodesById(animeId);
   if (resEpisodes) episodesList = Array.from(resEpisodes.data);
 
-  console.log(episodesList);
+  // console.log(episodesList);
 
   if (episodesList && episodesList.length > 0) {
     return (
