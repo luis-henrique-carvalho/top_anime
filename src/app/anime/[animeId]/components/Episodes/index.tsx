@@ -1,5 +1,6 @@
+"use client";
 import React, { useEffect, useState } from "react";
-import AnimeCard from "@/components/AnimeCard";
+
 import EpisodesCard from "@/app/anime/[animeId]/components/Episodes/components/EpisodesCard";
 import { getEpisodesById } from "@/config";
 
@@ -8,40 +9,48 @@ type Props = {
   image: string;
 };
 
-const Episodes = async ({ animeId, image }: Props) => {
-  let episodesList: any[] = [];
-  const resEpisodes = await getEpisodesById(animeId);
-  if (resEpisodes) episodesList = Array.from(resEpisodes.data);
+const Episodes = ({ animeId, image }: Props) => {
+  const [episodesList, setEpisodesList] = useState([]);
+  
+  const getEpisodes = async () => {
+    const resEpisodes = await getEpisodesById(animeId);
+    if (resEpisodes) setEpisodesList(Array.from(resEpisodes.data));
+  };
 
-  // console.log(episodesList);
+  useEffect(() => {
+    getEpisodes;
+  }, [animeId]);
 
-  if (episodesList && episodesList.length > 0) {
-    return (
-      <div className="">
-        <h2 className="text-anime-white font-normal text-3xl mb-10">
-          Lista de Ep
-        </h2>
+  return (
+    <React.Fragment>
+      {episodesList && episodesList.length > 0 ? (
+        <div className="">
+          <h2 className="text-anime-white font-normal text-3xl mb-10">
+            Lista de Ep
+          </h2>
 
-        <div className="w-ful overflow-x-auto flex justify-start ">
-          <div className="flex flex-row overflow-x-scroll gap-x-10 scrollbar-thin scrollbar-thumb-anime-blue scrollbar-track-anime-dark-200">
-            {episodesList &&
-              episodesList.map((episode: any, index: number) => {
-                return (
-                  <EpisodesCard
-                    score={episode.score}
-                    id={episode.mal_id}
-                    url={episode.url ? episode.url : episode.forum_url}
-                    key={index}
-                    image={image!}
-                    title={episode.title}
-                  />
-                );
-              })}
+          <div className="w-ful overflow-x-auto flex justify-start ">
+            <div className="flex flex-row overflow-x-scroll gap-x-10 scrollbar-thin scrollbar-thumb-anime-blue scrollbar-track-anime-dark-200">
+              {episodesList.map((episode: any, index) => (
+                <EpisodesCard
+                  key={index}
+                  score={episode.score}
+                  id={episode.mal_id}
+                  url={episode.url ? episode.url : episode.forum_url}
+                  image={image!}
+                  title={episode.title}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    );
-  }
+      ) : (
+        <div className="text-center">
+          <p>Nenhum episódio encontrado.</p>
+        </div>
+      )}
+    </React.Fragment>
+  );
 };
 
 export default Episodes;
