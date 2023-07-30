@@ -9,9 +9,12 @@ type Props = {
 };
 
 const Recommendations = async ({ animeId }: Props) => {
+  let recommendeds:any[] = [];
   const resRecommendeds = await getRecommendationsById(animeId);
-  const recommendeds = Array.from(resRecommendeds.data);
-  console.log(recommendeds)
+  if (resRecommendeds) {
+    recommendeds = Array.from(resRecommendeds.data);
+  }
+  console.log(recommendeds);
 
   return recommendeds && recommendeds.length > 0 ? (
     <aside className="hidden lg:flex md:flex-col md:w-[23%] gap-6">
@@ -37,7 +40,7 @@ const Recommendations = async ({ animeId }: Props) => {
     </aside>
   ) : (
     <aside className="hidden lg:flex md:flex-col md:w-[23%] gap-6">
-      <h3 className="text-anime-gray font-normal text-3xl">
+      <h3 className="text-anime-gray font-normal text-2xl">
         Sem recomendações
       </h3>
     </aside>

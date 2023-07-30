@@ -32,7 +32,6 @@ const AnimeDetails = async ({ params }: { params: { animeId: string } }) => {
             </div>
 
             <Recommendations
-          
               animeId={params.animeId}
             />
           </div>
@@ -62,12 +61,12 @@ const AnimeDetails = async ({ params }: { params: { animeId: string } }) => {
               <Synopsis synopsis={anime.synopsis} />
             </div>
           </div>
-          <Reviews animeId={params.animeId} />
-
           <Episodes
             animeId={params.animeId}
             image={anime.images.jpg.large_image_url}
           />
+          <Reviews animeId={params.animeId} />
+
         </>
       )}
     </div>

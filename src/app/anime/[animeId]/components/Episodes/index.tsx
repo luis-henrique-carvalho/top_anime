@@ -9,8 +9,9 @@ type Props = {
 };
 
 const Episodes = async ({ animeId, image }: Props) => {
+  let episodesList: any[] = [];
   const resEpisodes = await getEpisodesById(animeId);
-  const episodesList = Array.from(resEpisodes.data);
+  if (resEpisodes) episodesList = Array.from(resEpisodes.data);
 
   console.log(episodesList);
 

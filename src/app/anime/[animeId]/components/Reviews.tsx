@@ -7,16 +7,21 @@ type Props = {
 };
 
 const Reviews = async ({ animeId }: Props) => {
+  let reviewsArray: any[] = [];
   const res = await getReviewsByAnimeId(animeId);
-  const reviewsArray = Array.from(res.data);
-  console.log(reviewsArray)
 
+  if (res) {
+    reviewsArray = Array.from(res.data);
+  }
+  console.log(reviewsArray);
 
   return (
     <div className="flex flex-col gap-3">
-      <h3 className="mb-2 font-medium md:font-normal md:text-3xl text-sm text-anime-white">Comentários</h3>
+      <h3 className="mb-2 font-medium md:font-normal md:text-3xl text-sm text-anime-white">
+        {reviewsArray.length > 0 ? "Comentários": "Sem comentários"}
+      </h3>
       {reviewsArray &&
-        reviewsArray.map((iten: any, index) => {
+        reviewsArray.map((iten: any, index:number) => {
           return index === reviewsArray.length - 1 ? (
             <></>
           ) : (
