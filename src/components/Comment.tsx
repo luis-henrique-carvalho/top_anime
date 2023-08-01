@@ -40,7 +40,7 @@ const Comment = ({ userName, comment, image }: Props) => {
           onClick={() => setView(!view)}
           className="self-end text-anime-blue"
         >
-          Ver mais {view && "true"}
+          {view ? "Ver mais" : "Ver menos"}
         </button>
       </div>
     </div>
