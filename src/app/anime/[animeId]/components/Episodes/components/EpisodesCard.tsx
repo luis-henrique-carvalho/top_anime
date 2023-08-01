@@ -15,7 +15,7 @@ type Props = {
 const EpisodesCard = ({ title, image, score, url, id }: Props) => {
   return (
     <Link
-      href={url}
+      href={url || ""}
       className={" rounded-lg flex flex-col w-36 md:w-[188px] mb-4 "}
     >
       <div className="relative w-36 h-48 md:h-64 md:w-[188px] ">

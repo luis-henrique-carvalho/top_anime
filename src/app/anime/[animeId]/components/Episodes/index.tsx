@@ -11,16 +11,17 @@ type Props = {
 
 const Episodes = ({ animeId, image }: Props) => {
   const [episodesList, setEpisodesList] = useState([]);
-  
+
   const getEpisodes = async () => {
     const resEpisodes = await getEpisodesById(animeId);
     if (resEpisodes) setEpisodesList(Array.from(resEpisodes.data));
   };
 
   useEffect(() => {
-    getEpisodes;
+    getEpisodes();
   }, [animeId]);
 
+  console.log(episodesList)
   return (
     <React.Fragment>
       {episodesList && episodesList.length > 0 ? (
