@@ -9,14 +9,18 @@ interface Props {
 
 const Button: React.FC<Props> = ({ value }) => {
   const searchParams = usePathname().replace("/search/", "");
+  console.log(searchParams);
+  console.log(value);
 
   return (
     <Link
       href={value === "Todos" ? "/" : `/search/${value}`}
       className={`text-anime-white ${
-        searchParams === "/" && value === "Todos" ? "bg-[#151B26]" : ""
+        searchParams === "/" && value === "Todos"
+          ? "bg-anime-blue text-anime-dark-200"
+          : ""
       } ${
-        searchParams === value ? "bg-[#151B26]" : ""
+        searchParams === value ? `bg-anime-blue  text-anime-dark-200` : ""
       } inline-flex items-center justify-center w-20 md:w-32 text-xs md:text-lg h-10 text-center bg-transparent border-[0.1rem] border-solid border-anime-dark-200 rounded-full leading-10 transition-all duration-300 select-none`}
     >
       {value}

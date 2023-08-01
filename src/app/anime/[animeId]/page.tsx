@@ -19,6 +19,8 @@ const AnimeDetails = async ({ params }: { params: { animeId: string } }) => {
     image = resAnime.data.images.jpg.large_image_url;
   }
 
+  console.log(anime)
+
   return (
     <>
       {anime ? (
