@@ -1,5 +1,6 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 type Props = {
   userName: string;
@@ -8,9 +9,11 @@ type Props = {
 };
 
 const Comment = ({ userName, comment, image }: Props) => {
+  const [view, setView] = useState(false);
+
   return (
     <div className="text-anime-white flex flex-row gap-4">
-      <div className=" relative w-10 h-10 md:w-[70px] md:h-[70px] my-auto">
+      <div className="relative w-10 h-10 md:w-[70px] md:h-[70px] my-auto">
         <Image
           src={image}
           fill
@@ -20,14 +23,25 @@ const Comment = ({ userName, comment, image }: Props) => {
           priority
           alt="Picture of the author"
           className="rounded-full self-center"
-          sizes="(max-width: 640px) 100vw, 640px" // Adicione essa linha com o tamanho esperado da imagem
+          sizes="(max-width: 640px) 100vw, 640px" // Add this line with the expected image size
         />
       </div>
       <div className="flex flex-col w-full">
         <h4 className="text-xs md:text-lg font-medium mb-1">{userName}</h4>
-        <p lang="pt-BR" className="text-anime-gray text-justify md:text-base text-xs font-normal line-clamp-3">
+        <p
+          lang="pt-BR"
+          className={` ${
+            view ? "" : "line-clamp-3"
+          } text-anime-gray text-justify md:text-base text-xs font-normal`}
+        >
           {comment}
         </p>
+        <button
+          onClick={() => setView(!view)}
+          className="self-end text-anime-blue"
+        >
+          Ver mais {view && "true"}
+        </button>
       </div>
     </div>
   );

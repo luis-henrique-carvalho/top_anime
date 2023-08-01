@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { redirect, usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 interface Props {
@@ -9,8 +9,6 @@ interface Props {
 
 const Button: React.FC<Props> = ({ value }) => {
   const searchParams = usePathname().replace("/search/", "");
-
-  console.log(searchParams);
 
   return (
     <Link
