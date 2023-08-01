@@ -28,7 +28,8 @@ const AsideCard = ({ id, image, title, index }: Props) => {
 
       <div className="text-white flex flex-col w-3/5 justify-center p-2">
         <h4 className="line-clamp-2 text-sm font-medium">{title}</h4>
-        <p className="text-anime-gray">{id}</p>
+        <p className="text-anime-gray">Rank: {index +1}</p>
+        <p className="text-anime-gray">Votos: {id}</p>
       </div>
     </Link>
   );

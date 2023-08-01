@@ -27,7 +27,7 @@ const Recommendations = async ({ animeId }: Props) => {
 
             return (
               <AsideCard
-                id={anime.mal_id}
+                id={item.votes}
                 index={index}
                 key={index}
                 image={anime.images.jpg.large_image_url}

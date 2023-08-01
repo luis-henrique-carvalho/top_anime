@@ -12,7 +12,7 @@ const Comment = ({ userName, comment, image }: Props) => {
   const [view, setView] = useState(false);
 
   return (
-    <div className="text-anime-white flex flex-row gap-4">
+    <div className="text-anime-white flex flex-row items-start gap-4">
       <div className="relative w-10 h-10 md:w-[70px] md:h-[70px] my-auto">
         <Image
           src={image}
@@ -40,7 +40,7 @@ const Comment = ({ userName, comment, image }: Props) => {
           onClick={() => setView(!view)}
           className="self-end text-anime-blue"
         >
-          {view ? "Ver mais" : "Ver menos"}
+          {view ? "Ver menos" : "Ver mais"}
         </button>
       </div>
     </div>
