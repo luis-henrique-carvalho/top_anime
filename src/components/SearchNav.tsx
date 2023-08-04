@@ -1,6 +1,5 @@
 import Button from "@/components/Button";
 
-
 const SecundaryNav = () => {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 

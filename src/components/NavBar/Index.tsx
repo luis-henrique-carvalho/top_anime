@@ -1,7 +1,6 @@
 // Flow
 "use client";
 import React, { useState } from "react";
-import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 // Components
 import NoUnderlineLink from "./components/NoUnderlineLink";
@@ -10,7 +9,6 @@ import SearchNav from "../SearchNav";
 
 const NavBar = () => {
   const [search, setSearch] = useState("");
-  const pathName = usePathname();
   const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -22,7 +20,7 @@ const NavBar = () => {
   return (
     <header className="container my-6 md:px-10 min-w-full ">
       <nav className="flex flex-col w-full gap-6 items-center justify-between  md:flex-row">
-        <div>
+        <div className="flex items-center">
           <p className="text-4xl md:text-3xl font-semibold text-anime-blue">
             <NoUnderlineLink href="/">TopAnimes</NoUnderlineLink>
           </p>
@@ -49,7 +47,7 @@ const NavBar = () => {
           />
         </div>
       </nav>
-      {pathName === "/" && <SearchNav />}
+      <SearchNav />
     </header>
   );
 };

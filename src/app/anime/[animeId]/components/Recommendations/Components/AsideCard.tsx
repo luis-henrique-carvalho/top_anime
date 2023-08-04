@@ -13,7 +13,7 @@ const AsideCard = ({ id, image, title, index }: Props) => {
   return (
     <Link
       href={`/anime/${id}`}
-      className={`flex flex-row pointer-events-auto mb-[14px] h-28 justify-between bg-anime-dark-200`}
+      className={`flex flex-row w-full pointer-events-auto mb-[14px] md:h-28 justify-between bg-anime-dark-200`}
       key={index}
     >
       <div className="relative w-[100px] h-28">

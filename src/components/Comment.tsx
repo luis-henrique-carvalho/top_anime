@@ -13,7 +13,11 @@ const Comment = ({ userName, comment, image }: Props) => {
 
   return (
     <div className="text-anime-white flex flex-row items-start gap-4">
-      <div className="relative w-10 h-10 md:w-[70px] md:h-[70px] my-auto">
+      <div
+        className={` ${
+          view ? "hidden w-0" : ""
+        }relative w-10 h-10 md:w-[70px] md:h-[70px] my-auto`}
+      >
         <Image
           src={image}
           fill
@@ -27,7 +31,13 @@ const Comment = ({ userName, comment, image }: Props) => {
         />
       </div>
       <div className="flex flex-col w-full">
-        <h4 className="text-xs md:text-lg font-medium mb-1">{userName}</h4>
+        <h4
+          className={`${
+            view ? "text-lg" : ""
+          }text-xs md:text-lg font-medium mb-1`}
+        >
+          {userName}
+        </h4>
         <p
           lang="pt-BR"
           className={` ${

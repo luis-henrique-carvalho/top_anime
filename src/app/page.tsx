@@ -1,16 +1,17 @@
+
 import AnimeCard from "@/components/AnimeCard";
 import { getTopAnimes } from "@/config";
 
 export default async function Home() {
-  const animes = await getTopAnimes("1");
+  const animes = await getTopAnimes(1,20);
   const animesArray = Array.from(animes.data);
 
   console.log(animes);
 
   return (
     <div className="flex min-h-screen flex-col text-base my-4 items-start">
-      <h1 className="text-anime-white text-center mb-4">
-        Ultimas atualizações
+      <h1 className="text-anime-white text-center mb-10 text-3xl">
+        Top Anime
       </h1>
       <div className="flex flex-row flex-wrap justify-between gap-6">
         {animesArray &&
@@ -27,3 +28,4 @@ export default async function Home() {
     </div>
   );
 }
+

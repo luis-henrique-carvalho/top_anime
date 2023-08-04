@@ -1,6 +1,8 @@
-export async function getTopAnimes(num: string) {
+export async function getTopAnimes(page: number,limite: number) {
   try {
-    const res = await fetch(`https://api.jikan.moe/v4/top/anime?page=${num}`);
+    const res = await fetch(
+      `https://api.jikan.moe/v4/top/anime?page=${page}&limit=${limite}`
+    );
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");

@@ -15,7 +15,6 @@ export default async function Search({
 
   const searchName: string = params.searchParams
 
-  console.log(animesArray);
 
   return (
     <div className="flex min-h-screen flex-col text-base my-4 items-start">
