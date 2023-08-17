@@ -1,5 +1,4 @@
 import AnimeCard from "@/components/AnimeCard";
-import SecundaryNav from "@/components/SearchNav";
 import { getSearch } from "@/config";
 
 export default async function Search({
@@ -13,8 +12,7 @@ export default async function Search({
   const animes = await getSearch(inputSearch);
   const animesArray = Array.from(animes.data);
 
-  const searchName: string = params.searchParams
-
+  const searchName: string = params.searchParams;
 
   return (
     <div className="flex min-h-screen flex-col text-base my-4 items-start">

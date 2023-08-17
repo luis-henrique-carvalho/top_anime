@@ -14,7 +14,6 @@ const Recommendations = async ({ animeId }: Props) => {
   if (resRecommendeds) {
     recommendeds = Array.from(resRecommendeds.data);
   }
-  console.log(recommendeds);
 
   return recommendeds && recommendeds.length > 0 ? (
     <aside className="flex flex-col lg:flex md:flex-col w-full lg:w-[23%] gap-6">
