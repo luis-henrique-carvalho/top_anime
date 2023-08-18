@@ -18,7 +18,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="container my-6 md:px-10 min-w-full ">
+    <header className="container my-6 px-1 md:px-10 min-w-full ">
       <nav className="flex flex-col w-full gap-6 items-center justify-between  md:flex-row">
         <div className="flex items-center">
           <p className="text-4xl md:text-3xl font-semibold text-anime-blue">

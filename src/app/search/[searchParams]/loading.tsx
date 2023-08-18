@@ -1,7 +1,14 @@
+
 import React from "react";
+import { Spinner } from "@nextui-org/spinner";
 
-const loading = () => {
-  return <div className="text-anime-blue">loading.....</div>;
-};
-
-export default loading;
+export default function App() {
+  return (
+    <Spinner
+      label="Loading..."
+      color="primary"
+      size="lg"
+      className="absolute top-1/2 left-1/2"
+    />
+  );
+}

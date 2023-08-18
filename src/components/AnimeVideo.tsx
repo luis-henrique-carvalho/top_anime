@@ -6,7 +6,7 @@ type Props = {
 };
 
 const AnimeVideo = ({ url, title }: Props) => {
-  console.log(url, title);
+ 
   return (
     <>
       {url ? (

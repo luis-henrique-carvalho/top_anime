@@ -21,7 +21,7 @@ const Episodes = ({ animeId, image }: Props) => {
     getEpisodes();
   }, [animeId]);
 
-  console.log(episodesList)
+
   return (
     <React.Fragment>
       {episodesList && episodesList.length > 0 ? (

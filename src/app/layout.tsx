@@ -20,9 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className="dark bg-anime-dark">
       <body
-        className={`${rubik.className} min-h-screen bg-anime-dark p-4 mx-auto container max-w-screen-xl`}
+        className={`${rubik.className} min-h-screen p-4 mx-auto container max-w-screen-xl`}
       >
         <Providers>
           <NavBar />

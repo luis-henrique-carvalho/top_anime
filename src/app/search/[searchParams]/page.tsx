@@ -1,5 +1,6 @@
 import AnimeCard from "@/components/AnimeCard";
 import { getSearch } from "@/config";
+import Filters from "./components/Filters";
 
 export default async function Search({
   params,
@@ -19,6 +20,7 @@ export default async function Search({
       <h1 className="text-anime-white text-center mb-4">
         Resultados para {searchName.replace(/%20/g, " ")}
       </h1>
+      <Filters />
       <div className="flex flex-row flex-wrap justify-between gap-6">
         {animesArray &&
           animesArray.map((anime: any) => (
