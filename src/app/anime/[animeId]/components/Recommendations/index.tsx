@@ -1,8 +1,6 @@
 import React from "react";
 import AsideCard from "./Components/AsideCard";
-import AnimeCard from "@/components/AnimeCard";
-import EpisodesCard from "@/app/anime/[animeId]/components/Episodes/components/EpisodesCard";
-import { getEpisodesById, getRecommendationsById } from "@/config";
+import { getRecommendationsById } from "@/config";
 
 type Props = {
   animeId: string;
@@ -28,11 +26,12 @@ const Recommendations = async ({ animeId }: Props) => {
 
             return (
               <AsideCard
-                id={item.votes}
+                id={anime.mal_id}
                 index={index}
                 key={index}
                 image={anime.images.jpg.large_image_url}
                 title={anime.title}
+                votes={item.votes}
               />
             );
           })}

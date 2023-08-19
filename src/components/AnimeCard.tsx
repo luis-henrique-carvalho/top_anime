@@ -15,6 +15,7 @@ const AnimeCard = ({ title, image, episodes, id, footer }: Props) => {
     <Link
       href={`/anime/${id}`}
       className={" rounded-lg flex flex-col w-[188px]  "}
+      prefetch={false}
     >
       <div className="relative h-64 w-full ">
         <div className="relative  w-full h-full  bg-gradient-to-t from-anime-dark to-transparent z-20 "></div>

@@ -1,11 +1,12 @@
-'use client'
+"use client";
 
-import {NextUIProvider} from '@nextui-org/react'
+import { SearchProvider } from "@/context/search/serchs";
+import { NextUIProvider } from "@nextui-org/react";
 
-export function Providers({children}: { children: React.ReactNode }) {
+export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <NextUIProvider>
-      {children}
-    </NextUIProvider>
-  )
+    <SearchProvider>
+      <NextUIProvider>{children}</NextUIProvider>
+    </SearchProvider>
+  );
 }

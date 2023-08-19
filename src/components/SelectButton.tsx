@@ -1,45 +1,44 @@
+"use client";
 import React from "react";
-
-import { Button } from "@nextui-org/button";
 import {
   Dropdown,
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
 } from "@nextui-org/dropdown";
-
+import { Button } from "@nextui-org/button";
 import { MdArrowDropDown } from "react-icons/md";
+import { useSearchState } from "@/hooks/useSearchState";
 
 interface Props {
   buttonName: string;
-  itens: string[];
+  items: string[];
 }
 
-export default function SelectButton({ itens, buttonName }: Props) {
-  // const [selectedKeys, setSelectedKeys] = React.useState("");
+export default function SelectButton({ items, buttonName }: Props) {
+  const { updateOrderBy, orderBy } = useSearchState();
 
-  // const handleSelectionChange = (newSelection: any) => {
-  //   setSelectedKeys(newSelection);
-  // };
+  console.log(orderBy);
+
+  const handleSelectionChange = (newSelection: any) => {
+    updateOrderBy(newSelection);
+    console.log(newSelection);
+  };
 
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button
-          endContent={<MdArrowDropDown />}
-          className="capitalize min-w-[15%] bg-anime-dark text-white"
-        >
-          {buttonName}
+        <Button variant="bordered" className="capitalize text-white">
+          Ordenar por
         </Button>
       </DropdownTrigger>
       <DropdownMenu
         aria-label="Single selection actions"
         disallowEmptySelection
-        selectionMode="single"
-        // selectedKeys={selectedKeys}
-        // onSelectionChange={handleSelectionChange} // Use the modified callback
+        selectionMode="multiple"
+        onAction={handleSelectionChange} // Use the modified callback
       >
-        {itens.map((item) => (
+        {items.map((item) => (
           <DropdownItem key={item}>{item}</DropdownItem>
         ))}
       </DropdownMenu>
